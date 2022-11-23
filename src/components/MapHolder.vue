@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { Loader } from "@googlemaps/js-api-loader";
 import { ref, onMounted, onUnmounted } from "vue";
+import { currentLocation } from "@/stores/currentLocationStore";
 
 const mapDiv = ref<HTMLDivElement | null>(null);
-let currentLocation = ref({
-  lat: 40.761442398415525,
-  lng: -111.89371417630697,
-});
 
 // eslint-disable-next-line no-undef
 let clickListener: google.maps.MapsEventListener;
