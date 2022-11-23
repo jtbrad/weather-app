@@ -30,7 +30,6 @@ async function getWeatherData() {
         import.meta.env.VITE_OPEN_WEATHER_API_KEY
       }&units=imperial`
     );
-    console.log(response.data);
     weatherData.value = {
       location: response.data.name,
       condition: response.data.weather[0].description,
