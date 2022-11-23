@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { Loader } from "@googlemaps/js-api-loader";
 import { ref, onMounted, onUnmounted } from "vue";
+import { currentLocation } from "@/stores/currentLocationStore";
 
 const mapDiv = ref<HTMLDivElement | null>(null);
-let currentLocation = ref({
-  lat: 40.761442398415525,
-  lng: -111.89371417630697,
-});
 
 // eslint-disable-next-line no-undef
 let clickListener: google.maps.MapsEventListener;
@@ -43,7 +40,7 @@ onMounted(async () => {
 
   // eslint-disable-next-line no-undef
   clickListener = marker.addListener(
-    "drag",
+    "dragend",
     // eslint-disable-next-line no-undef
     (e: google.maps.MapMouseEvent) => {
       if (e.latLng) {
@@ -68,7 +65,5 @@ onUnmounted(() => {
 
 <style scoped>
 div {
-  height: 400px;
-  width: 400px;
 }
 </style>
