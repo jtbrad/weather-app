@@ -65,7 +65,5 @@ onUnmounted(() => {
 
 <style scoped>
 div {
-  height: 400px;
-  width: 400px;
 }
 </style>
