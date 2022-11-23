@@ -40,7 +40,7 @@ onMounted(async () => {
 
   // eslint-disable-next-line no-undef
   clickListener = marker.addListener(
-    "drag",
+    "dragend",
     // eslint-disable-next-line no-undef
     (e: google.maps.MapMouseEvent) => {
       if (e.latLng) {

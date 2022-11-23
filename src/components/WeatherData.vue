@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { currentLocation } from "@/stores/currentLocationStore";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import axios from "axios";
 
 interface WeatherData {
@@ -46,6 +46,10 @@ async function getWeatherData() {
 }
 
 onMounted(() => {
+  getWeatherData();
+});
+
+watch(currentLocation, () => {
   getWeatherData();
 });
 </script>
