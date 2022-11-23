@@ -16,8 +16,9 @@ interface WeatherData {
 
 const weatherData = ref<WeatherData | null>(null);
 
-function formatTime(time: number) {
-  return new Date(time).toLocaleTimeString("en-US");
+function formatTime(timeInSec: number) {
+  const timeInMilSec = timeInSec * 1000;
+  return new Date(timeInMilSec).toLocaleTimeString("en-US");
 }
 
 async function getWeatherData() {
@@ -76,11 +77,11 @@ watch(currentLocation, () => {
       </tr>
       <tr>
         <td>Sunrise:</td>
-        <td>{{ weatherData.sunrise }} UTC</td>
+        <td>{{ weatherData.sunrise }} MT</td>
       </tr>
       <tr>
         <td>Sunset:</td>
-        <td>{{ weatherData.sunset }} UTC</td>
+        <td>{{ weatherData.sunset }} MT</td>
       </tr>
       <tr>
         <td>Wind Speed:</td>
