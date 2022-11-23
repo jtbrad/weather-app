@@ -13,9 +13,9 @@ import WeatherData from "@/components/WeatherData.vue";
 
 <style scoped>
 main {
+  column-gap: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 100px;
+  grid-template-columns: repeat(5, 1fr);
   width: 100%;
 }
 
@@ -30,7 +30,7 @@ h1 {
 }
 
 .weatherData {
-  grid-column: 4 / 5;
+  grid-column: 4 / 6;
   grid-row: 2 / 7;
 }
 </style>
